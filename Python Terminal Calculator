@@ -1,0 +1,59 @@
+def addition(a, b):
+    return a + b
+
+def subtraction(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def division(a, b):
+    if b == 0:
+        raise ValueError("Cannot divide by zero")
+    return a / b
+
+print("Welcome to Multi-Version Calculator!") 
+
+# Ask the user for their desired calculator
+
+print("\n1 = Simple (Only Expression) ")
+print("\n2 = Advanced (More Complicated) ")
+calculatorChoice = input("\nWhat calculator do you want to run? (1/2): ")
+
+if calculatorChoice == '1':
+    try:
+        expression = input("Enter your expression (Must not contain a division by zero!): ")
+        result = eval(expression)
+        print(result, "is the result of the expression! Thank you for using the calculator!")
+    except Exception as e:
+        print(f"Error: {e}")
+
+elif calculatorChoice == '2':
+    try:
+        num1 = float(input("Enter your first number: "))
+        num2 = float(input("Enter your second number: "))
+
+        print("Please choose an option!")
+        print("1. Add")
+        print("2. Subtract")
+        print("3. Multiply")
+        print("4. Divide")
+
+        choice = input("Enter your operation number (1-4): ")
+
+        if choice == '1':
+            print("Result: ", addition(num1, num2))
+        elif choice == '2':
+            print("Result: ", subtraction(num1, num2))
+        elif choice == '3':
+            print("Result: ", multiplication(num1, num2))
+        elif choice == '4':
+            print("Result: ", division(num1, num2))
+        else:
+            print("Invalid Character Choice!")    
+    except ValueError as ve:
+        print(f"Value Error: {ve}")
+    except Exception as e:
+        print(f"Error: {e}")
+else:
+    print("Invalid Calculator Choice!")

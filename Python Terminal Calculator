@@ -1,3 +1,5 @@
+# Works in a online Python IDLE
+
 def addition(a, b):
     return a + b
 

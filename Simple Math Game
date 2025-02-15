@@ -1,0 +1,33 @@
+# Simple Math Game
+
+import random
+
+print("Welcome to the Math Game!")
+
+numchoice = float(input("How many numbers do you want in your equation?  2 , 3 or 4? "))
+
+while True:
+
+    if numchoice == 2:
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        print("What is", num1, "+", num2, "?")
+
+    elif numchoice == 3:
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        num3 = random.randint(1, 100)
+        print("What is", num1, "+", num2, "+", num3, "?")
+
+    elif numchoice == 4:
+        num1 = random.randint(1, 100)
+        num2 = random.randint(1, 100)
+        num3 = random.randint(1, 100)
+        num4 = random.randint(1, 100)
+        print("What is", num1, "+", num2, "+", num3, "+", num4, "?")
+
+    answer = float(input("Answer: "))
+    if answer == num1 + num2:
+        print("Correct!")
+    else:
+        print("Incorrect. The answer is", num1 + num2)
